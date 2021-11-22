@@ -88,7 +88,7 @@ $form.addEventListener("submit", function(event){
   }
 $storyOutput.innerHTML = storySelection.output($finalOutput)
 
-const $backButton = `<button type="submit" id="backButton">Home</button>`
+const $backButton = `<button type="submit" id="backButton">Create new story</button>`
 $storyOutput.innerHTML = $storyOutput.innerHTML + $backButton
 
 $storyOutput.addEventListener('click', function(){
