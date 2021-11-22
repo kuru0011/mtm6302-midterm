@@ -45,3 +45,55 @@ const stories = [
     }
   }
 ]
+
+//declaring variables
+const $btn = document.getElementById('btn')
+const $form = document.getElementById('form')
+const $storyOutput = document.getElementById('storyOutput')
+
+//preventing page refresh
+$btn.addEventListener('submit', function(event){
+  event.preventDefault()
+})
+
+let wordInput = []       //array for words from the user
+let storySelection            //user selecting one of three stories
+
+$btn.addEventListener('click', function(event){                       //creating an event using story button
+  wordInput.push(`<form id="input">`)
+                  storySelection= stories[event.target.dataset.story]
+
+
+for(const word of storySelection.words){                            //extracting words for the story
+  wordInput.push(`<input type="text" name="${word}" placeholder="${word}" class="formInput">`)
+}
+
+wordInput.push(`<button type="submit" class="formButton">Create</button>`)
+wordInput.push(`</form>`)
+$form.innerHTML = wordInput.join('')
+$btn.style.visibility = "hidden"
+})
+
+$form.addEventListener("submit", function(event){
+  event.preventDefault() 
+  const $input = document.getElementById("input")
+  const $finalOutput = {}
+
+  for(const formScan of $input.elements){
+    if(formScan.name){
+      $finalOutput[formScan.name] = formScan.value
+
+      $input.remove()
+    }
+  }
+$storyOutput.innerHTML = storySelection.output($finalOutput)
+
+const $backButton = `<button type="submit" id="backButton">Home</button>`
+$storyOutput.innerHTML = $storyOutput.innerHTML + $backButton
+
+$storyOutput.addEventListener('click', function(){
+    $storyOutput.style.visibility = "hidden"
+    wordInput = []
+    $btn.style.visibility = "visible"
+  })
+})

@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&family=Quicksand&display=swap');
+
+body{
+    background-color: black;
+}
+
+.container{
+    /* margin: auto; */
+    font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    color: white;
+}
+
+h1{
+    font-family: 'Comfortaa', cursive;
+}
+
+#buttonStyle{
+    background-color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.5rem;
+}
+
+.formInput{
+    font-family: 'Quicksand', sans-serif;
+    padding: 0.7rem;
+    font-size: 1rem;
+    margin: 0.2rem;
+    width: 90%;
+}
+
+.formButton, #backButton{
+    padding: 0.8rem;
+    width: 60%;
+    margin: 0.8rem;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+#storyOutput{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 1.5rem;
+    margin:2rem;
+}
